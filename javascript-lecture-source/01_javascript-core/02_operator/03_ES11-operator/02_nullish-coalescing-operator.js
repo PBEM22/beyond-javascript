@@ -5,7 +5,7 @@ var obj = null;
 var test = obj ?? '기본 값';
 console.log(test);
 
-// 단축 평가 활용 시 빈 문자열과 같은 Falsy 값을 False로 취급해서 생기는 문제가 있다.
+// 단축 평가 활용 시 빈 문자열과 같은 Falsy 값을 false로 취급하는 문제가 있었다.
 var val = '' || '기본 값';
 console.log(val);
 var val2 = '' ?? '기본 값';
