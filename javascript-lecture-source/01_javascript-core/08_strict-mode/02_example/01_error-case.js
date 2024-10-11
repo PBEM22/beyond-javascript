@@ -18,7 +18,7 @@
 
 // 3. 매개변수의 이름 중복
 (function(){
-    //'use strict';
+    // 'use strict';
     function test(x, x) { // 엄격모드 적용 시 parameter name 중복 오류 발생
         return x + x;
     }
