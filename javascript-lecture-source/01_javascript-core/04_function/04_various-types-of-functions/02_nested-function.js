@@ -8,10 +8,11 @@ function outer() {
 
     function inner() {
         var innerVal = '내부 함수';
-
+        // 외부 함수의 변수를 내부 함수에서 참조할 수 있다.
         console.log(`outerVal : ${outerVal}, innerVal : ${innerVal}`);
     }
 
+    // 내부 함수는 외부 함수 내에서만 호출이 가능하다.
     inner();
 
 }
