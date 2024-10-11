@@ -20,12 +20,3 @@ String.prototype.hello = function() {
 }
 
 "JavaScript".hello();
-
-
-
-
-
-
-
-
-
