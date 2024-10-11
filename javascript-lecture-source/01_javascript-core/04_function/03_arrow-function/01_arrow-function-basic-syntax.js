@@ -17,6 +17,10 @@ console.log(message());
 message = () => 'Arrow Functions are simple!';
 console.log(message());
 
+// 매개변수가 있는 경우
+message = (val1, val2) => 'Arrow ' + val1 + val2;
+console.log(message('Function', '!!!'));
 
-
-
+// 매개변수가 하나이면 소괄호를 생략할 수 있다. 없거나 여러 개인 경우는 생략 불가능하다.
+message = val => 'Arrow ' + val;
+console.log(message('Function'));
