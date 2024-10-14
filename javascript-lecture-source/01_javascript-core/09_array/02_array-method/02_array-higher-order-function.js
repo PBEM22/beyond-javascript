@@ -107,3 +107,5 @@ console.log(result);
 // 만약 80점 이상인 학생들을 찾고 싶다면?
 result = students.filter(item => item.score >= 80);
 console.log(result);
+
+
