@@ -17,6 +17,7 @@ class Tiger extends Animal {
     attack(target) {
         console.log(`${this.name}(은)는 ${target}을 공격합니다.`);
     }
+    // Animal move 메소드의 오버라이딩 메소드
     move(target) {
         this.attack(target);
         super.move(0.1);
