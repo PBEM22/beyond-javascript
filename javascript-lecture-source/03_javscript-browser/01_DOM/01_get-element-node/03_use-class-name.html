@@ -26,7 +26,21 @@
     </ul>
 
     <script>
+        // DOM 전체에서 class 값이 drink 인 요소 노드 모두 탐색하여 반환
+        const $drink = document.getElementsByClassName('drink');
+        console.log($drink);
 
+        const $coffee = document.getElementsByClassName('drink coffee');
+        console.log($coffee);
+
+        // id = "available" 의 자식 노드 중 class 값이 drink인 요소 노드
+        const $availableDrink = document.getElementById('available')
+            .getElementsByClassName('drink');
+        console.log($availableDrink);
+
+        const $noElem = document.getElementById('available')
+            .getElementsByClassName('soju');
+        console.log($noElem);
     </script>
 
 </body>

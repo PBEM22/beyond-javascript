@@ -26,6 +26,29 @@
     </ul>
 
     <script>
+        // DOM 전체에서 li 태그를 모두 탐색하여 반환
+        const $lists = document.getElementsByTagName('li');
+        console.log($lists);
+
+        let changeColor = 0;
+        for(let i = 0; i < $lists.length; i++) {
+            $lists[i].style.backgroundColor = 'rgb(130, 220, ' + changeColor + ')';
+            changeColor += 50;
+        }
+
+        // HTMLCollection은 배열이 아니기 때문에 배열 메소드를 사용할 수 없다.
+        // Array.from() 메소드를 통해 배열로 만들어 주면 배열 메소드를 사용할 수 있다.
+        Array.from($lists).forEach(list => list.style.backgroundColor = 'blue');
+
+        // id="drink" 요소의 자손 노드 중 li 태그 검색
+        const $drink = document.getElementById('drink');
+        const $listFromDrink = $drink.getElementsByTagName('li');
+        console.log($listFromDrink);
+        Array.from($listFromDrink).forEach(list => list.style.backgroundColor = 'red');
+
+        // 해당 태그 이름을 갖는 요소가 존재하지 않을 경우 빈 HTMLCollection 객체 반환
+        const $noElem = $drink.getElementsByTagName('a');
+        console.log($noElem);
 
     </script>
 
