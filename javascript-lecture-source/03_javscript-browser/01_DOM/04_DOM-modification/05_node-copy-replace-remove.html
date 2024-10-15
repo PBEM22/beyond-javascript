@@ -26,6 +26,9 @@
     // $ul 깊은 복사 -> 모든 자손 노드가 포함 된 사본 생성
     const $deepCopy = $ul.cloneNode(true);
 
+    $ul.appendChild($shallowCopy);
+    $ul.appendChild($deepCopy);
+
   </script>
 
   <h3>노드 교체</h3>
