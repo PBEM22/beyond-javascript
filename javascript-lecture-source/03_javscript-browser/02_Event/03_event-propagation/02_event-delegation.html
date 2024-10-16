@@ -26,6 +26,17 @@
     </ul>
 
     <script>
+        const $drink = document.querySelector('#drink');
+
+        $drink.addEventListener('click', e => {
+           console.log(e.target);
+           // ul 영역 클릭 시에는 함수를 호출하고 싶지 않으므로 이벤트 타깃이 li인지 확인
+           if(e.target.matches('li')) highlight(e.target);
+        });
+
+        function highlight(li) {
+            li.classList.toggle('highlight');
+        }
 
     </script>
 
