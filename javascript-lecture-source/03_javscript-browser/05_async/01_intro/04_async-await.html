@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /* Promise 객체 */
+    function increase(number) {
+        /* resolve : 성공, reject : 실패 */
+        return new Promise((resolve, reject) => {
+            setTimeout(
+                () => {
+                    const result = number + 10;
+
+                    if (result > 30) {
+                        const e = new Error('NumberTooBig');
+                        return reject(e);
+                    }
+
+                    resolve(result);
+                },
+                1000
+            );
+        });
+    }
+
+    // 함수 앞에 async 키워드를 작성한다.
+    async function run(){
+
+        // Promise를 반환하는 함수 호출 시 앞에 await 키워드를 작성한다.
+        // Promise 객체에 정의 된 resolve 함수의 반환 값이 반환 된다.
+        let result = await increase(0);
+        console.log(result);
+        result = await increase(0);
+        console.log(result);
+        result = await increase(0);
+        console.log(result);
+        result = await increase(0);
+        console.log(result);
+    }
+
+    run();
+</script>
+</body>
+</html>
