@@ -20,8 +20,27 @@
     <button id="btn">클릭해보세요</button>
 
     <script>
+        const $button = document.querySelector('#btn');
+        $button.addEventListener('click', function(){ alert('클릭했네?'); });
+        // 동일 이벤트에 이벤트 핸들러를 다중으로 등록할 수 있다.
+        $button.addEventListener('click', function(){
+            console.log('addEventListener 방식으로 추가 등록');
+        });
+
+        // 참조가 동일한 이벤트 핸들러를 중복해서 등록하더라도 하나의 핸들러만 등록 된다.
+        const handleMouseover = () => console.log('button mouseover!!');
+        $button.addEventListener('mouseover', handleMouseover);
+        $button.addEventListener('mouseover', handleMouseover);
 
     </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
