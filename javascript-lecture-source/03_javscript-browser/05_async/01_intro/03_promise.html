@@ -10,12 +10,12 @@
     * 추가하였다. */
     function increase(number) {
         /* resolve : 성공, reject : 실패 */
-        return new Promise((resolve, reject) => {
+        const promise = new Promise((resolve, reject) => {
             setTimeout(
                 () => {
                     const result = number + 10;
 
-                    if (result > 30) {
+                    if(result > 30) {
                         const e = new Error('NumberTooBig');
                         return reject(e);
                     }
@@ -25,6 +25,8 @@
                 1000
             );
         });
+
+        return promise;
     }
 
     // Promise 객체 자체를 반환 받아서는 사용할 수 없다.
@@ -45,7 +47,7 @@
             console.log(number);
             return increase(number);
         })
-        .catch(e => {       // reject 함수로 반환한 값이 catch 콜백의 매개변수로 전달
+        .catch(e => {   // reject 함수로 반환한 값이 catch 콜백의 매개변수로 전달
             console.log(e);
         })
 
