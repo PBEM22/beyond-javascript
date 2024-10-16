@@ -17,7 +17,18 @@
     </ul>
 
     <script>
-
+        const $drink = document.querySelector('#drink');
+        $drink.addEventListener('click', e => {
+            // ul 영역 클릭 시
+            // eventPhase : 2(타깃 단계), target : ul, currentTarget : ul
+            // li 영역 클릭 시
+            // eventPhase : 3(버블링 단계 li -> ul), target : li, currentTarget : ul
+            // target : 실제 클릭 된 대상
+            // currentTarget : 이벤트가 바인딩 된 대상
+            console.log(e.eventPhase);
+            console.log(e.target);
+            console.log(e.currentTarget);
+        });
     </script>
 
     <p>
@@ -33,7 +44,21 @@
     </ul>
 
     <script>
+        const $food = document.querySelector('#food');
 
+        $food.addEventListener('click', e => {
+            console.log('캡쳐링');
+            console.log(e.eventPhase);
+            console.log(e.target);
+            console.log(e.currentTarget);
+        }, true);
+
+        $food.addEventListener('click', e => {
+            console.log('버블링');
+            console.log(e.eventPhase);
+            console.log(e.target);
+            console.log(e.currentTarget);
+        });
     </script>
 
 </body>

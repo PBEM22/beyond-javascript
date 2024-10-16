@@ -16,7 +16,9 @@
     <input type="checkbox">클릭해도 절대 체크되지 않는 박스
 
     <script>
-
+        document.querySelector('a').addEventListener('click', e => e.preventDefault());
+        document.querySelector('input[type=checkbox]')
+            .addEventListener('click', e => e.preventDefault());
     </script>
 
 </body>

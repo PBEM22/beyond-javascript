@@ -17,7 +17,16 @@
     </ul>
 
     <script>
-
+        const $drink = document.querySelector('#drink');
+        // 이벤트 위임 - 클릭 된 하위 li 요소 color 변경
+        $drink.addEventListener('click', e => {
+           if(e.target.matches('li')) e.target.style.color = 'red';
+        });
+        // 첫 번째 li는 다른 색상으로 변경 되도록 설정
+        document.querySelector('li').addEventListener('click', e => {
+            e.stopPropagation();
+            e.target.style.color = 'blue';
+        });
 
     </script>
 
