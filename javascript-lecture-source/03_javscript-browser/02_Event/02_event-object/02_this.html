@@ -15,7 +15,13 @@
     <button onclick="handleClick2(this);">클릭해보세요</button>
 
     <script>
+        function handleClick1(){
+            console.log(this);
+        }
 
+        function handleClick2(param){
+            console.log(param);
+        }
     </script>
 
     <h3>이벤트 핸들러 프로퍼티, addEventListener</h3>
@@ -29,6 +35,18 @@
     <button id="btn2">클릭해보세요</button>
 
     <script>
+        const $btn1 = document.querySelector('#btn1');
+        $btn1.onclick = function(e) {
+            console.log(this);
+            console.log(e.currentTarget);
+        }
+
+        const $btn2 = document.querySelector('#btn2');
+        $btn2.addEventListener('click', function(e) {
+            console.log(this);
+            console.log(e.currentTarget);
+        });
+
 
     </script>
 
