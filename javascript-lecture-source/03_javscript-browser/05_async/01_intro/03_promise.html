@@ -14,6 +14,12 @@
             setTimeout(
                 () => {
                     const result = number + 10;
+
+                    if(result > 30) {
+                        const e = new Error('NumberTooBig');
+                        return reject(e);
+                    }
+
                     resolve(result);
                 },
                 1000
@@ -40,6 +46,9 @@
         .then(number => {   // 이전 then 메소드의 반환 값이 매개변수로 전달
             console.log(number);
             return increase(number);
+        })
+        .catch(e => {   // reject 함수로 반환한 값이 catch 콜백의 매개변수로 전달
+            console.log(e);
         })
 
 
