@@ -27,6 +27,10 @@
             console.log('addEventListener 방식으로 추가 등록');
         });
 
+        $button.onclick = () => {
+            console.log('프로퍼티 방식으로 추가 등록');
+        }
+
         // 참조가 동일한 이벤트 핸들러를 중복해서 등록하더라도 하나의 핸들러만 등록 된다.
         const handleMouseover = () => console.log('button mouseover!!');
         $button.addEventListener('mouseover', handleMouseover);

@@ -17,7 +17,13 @@
     </h1>
 
     <script>
+        document.onclick = showCoords;
 
+        function showCoords(evt) {
+            console.log(evt);
+            const $msg = document.querySelector('.message');
+            $msg.textContent = `clientX : ${evt.clientX}, clientY: ${evt.clientY}`;
+        }
     </script>
 
     <p>
@@ -30,7 +36,11 @@
     </div>
 
     <script>
-
+        function showDivCoords(e) {
+            console.log(e);
+            const $area = document.querySelector('.area');
+            $area.textContent = `clientX : ${e.clientX}, clientY: ${e.clientY}`;
+        }
     </script>
 
 </body>
