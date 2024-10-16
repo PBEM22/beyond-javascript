@@ -60,7 +60,16 @@
     <button id="btn4">클릭해보세요</button>
 
     <script>
-
+        const $btn3 = document.querySelector('#btn3');
+        $btn3.onclick = e => {
+            console.log(this);
+            console.log(e.currentTarget);
+        }
+        const $btn4 = document.querySelector('#btn4');
+        $btn4.addEventListener('click', e => {
+            console.log(this);
+            console.log(e.currentTarget);
+        });
     </script>
 </body>
 </html>
